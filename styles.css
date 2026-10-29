@@ -1,18 +1,20 @@
-/* Base styles & background */
+/* Base theme & color palette: Warm parchment white & classic tomato red */
 :root {
-  --bg-color: #0f172a;
-  --card-bg: #1e293b;
-  --accent-color: #f97316;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --border-color: #334155;
+  --bg-color: #fcfaf7;          /* Soft off-white parchment background */
+  --card-bg: #ffffff;          /* Crisp white cards */
+  --accent-red: #c0392b;        /* Rich Italian tomato red */
+  --accent-green: #2e7d32;      /* Deep olive green accent */
+  --text-main: #2b2625;        /* Soft warm charcoal for text */
+  --text-muted: #736b69;       /* Muted brown-grey for labels */
+  --border-color: #ebdcd5;     /* Warm subtle border tone */
+  --card-shadow: 0 4px 12px rgba(192, 57, 43, 0.06);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
 }
 
 body {
@@ -21,93 +23,105 @@ body {
   padding: 16px;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 /* Header & Nav */
 header {
   text-align: center;
-  padding: 20px 0 10px;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 20px;
+  padding: 24px 0 16px;
+  border-bottom: 2px solid var(--accent-red);
+  margin-bottom: 24px;
 }
 
 header h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-color);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  letter-spacing: -0.5px;
 }
 
 nav {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 nav a {
-  color: var(--text-muted);
+  color: var(--accent-green);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 nav a:hover {
-  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 /* Page Title */
 h2 {
-  font-size: 1.3rem;
-  margin-bottom: 16px;
+  font-size: 1.35rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-main);
+  font-weight: 700;
 }
 
-/* Input Card */
+/* Card Sections */
 section {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: var(--card-shadow);
 }
 
 section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 14px;
-  color: var(--accent-color);
-  border-bottom: 1px solid var(--border-color);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: var(--accent-red);
+  border-bottom: 2px solid var(--bg-color);
   padding-bottom: 8px;
+  font-weight: 700;
 }
 
+/* Input Fields */
 label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   font-size: 0.95rem;
   color: var(--text-main);
+  font-weight: 500;
 }
 
 input[type="number"] {
   width: 90px;
-  background-color: #0f172a;
+  background-color: var(--bg-color);
   border: 1px solid var(--border-color);
-  color: #fff;
+  color: var(--accent-red);
   padding: 8px 12px;
   border-radius: 8px;
   text-align: right;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 input[type="number"]:focus {
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid var(--accent-red);
   border-color: transparent;
+  background-color: #fff;
 }
 
 /* Results Display */
 .results-summary {
-  font-size: 1rem;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 1px dashed var(--border-color);
+  font-weight: 600;
 }
 
 ul {
@@ -117,28 +131,32 @@ ul {
 ul li {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 9px 0;
+  border-bottom: 1px solid #f5ede8;
   font-size: 0.95rem;
 }
 
+ul li span {
+  color: var(--text-main);
+}
+
 ul li strong {
-  color: var(--accent-color);
+  color: var(--accent-red);
   font-weight: 700;
 }
 
-/* Method Instructions */
+/* Instructions Lists */
 ol {
   padding-left: 20px;
 }
 
 ol li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+  margin-bottom: 14px;
+  line-height: 1.6;
   font-size: 0.95rem;
-  color: #e2e8f0;
+  color: var(--text-main);
 }
 
 ol li strong {
-  color: var(--accent-color);
+  color: var(--accent-red);
 }
