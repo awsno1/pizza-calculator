@@ -1,45 +1,66 @@
-// Function that calculates ingredient amounts based on Baker's Percentages
 function calculateDough() {
-  // 1. Get the numbers entered by the user
+  // 1. Get user inputs from the text boxes
   const numBalls = parseFloat(document.getElementById('numBalls').value) || 0;
   const ballWeight = parseFloat(document.getElementById('ballWeight').value) || 0;
   const hydration = parseFloat(document.getElementById('hydration').value) || 0;
-  const salt = parseFloat(document.getElementById('salt').value) || 0;
-  const yeast = parseFloat(document.getElementById('yeast').value) || 0;
+  const saltPct = parseFloat(document.getElementById('salt').value) || 0;
+  const oilPct = parseFloat(document.getElementById('oil').value) || 0;
+  const sugarPct = parseFloat(document.getElementById('sugar').value) || 0;
+  const yeastPct = parseFloat(document.getElementById('yeast').value) || 0;
 
-  // 2. Calculate Total Dough Weight needed
-  const totalWeight = numBalls * ballWeight;
+  // 2. Calculate Total Target Dough Mass
+  const totalDoughWeight = numBalls * ballWeight;
 
-  // 3. Calculate Baker's Percentages formula
-  // Total % = 100% (Flour) + Hydration % + Salt % + Yeast %
-  const totalPercentage = 100 + hydration + salt + yeast;
+  // 3. Calculate Baker's Percentages (Flour = 100%)
+  const totalPercentage = 100 + hydration + saltPct + oilPct + sugarPct + yeastPct;
+  const totalFlour = totalDoughWeight / (totalPercentage / 100);
 
-  // Flour (g) = Total Weight / (Total Percentage / 100)
-  const flour = totalWeight / (totalPercentage / 100);
+  // 4. Split Flours (70% Tipo 00 / 30% Bread Flour)
+  const tipo00 = totalFlour * 0.70;
+  const breadFlour = totalFlour * 0.30;
 
-  // Other ingredients are calculated relative to Flour weight
-  const water = flour * (hydration / 100);
-  const saltWeight = flour * (salt / 100);
-  const yeastWeight = flour * (yeast / 100);
+  // 5. Calculate Total Water and split (95% Main Water / 5% Reserved Water)
+  const totalWater = totalFlour * (hydration / 100);
+  const mainWater = totalWater * 0.95;
+  const reservedWater = totalWater * 0.05;
 
-  // 4. Update the numbers displayed on the web page (rounded to 1 decimal place)
-  document.getElementById('totalWeight').innerText = totalWeight.toFixed(1);
-  document.getElementById('flourWeight').innerText = flour.toFixed(1);
-  document.getElementById('waterWeight').innerText = water.toFixed(1);
-  document.getElementById('saltWeight').innerText = saltWeight.toFixed(1);
-  document.getElementById('yeastWeight').innerText = yeastWeight.toFixed(1);
+  // 6. Calculate Other Ingredients relative to total flour
+  const salt = totalFlour * (saltPct / 100);
+  const oil = totalFlour * (oilPct / 100);
+  const sugar = totalFlour * (sugarPct / 100);
+  const yeast = totalFlour * (yeastPct / 100);
 
-  // 5. Update the numbers inside the Method Instructions text dynamically
-  document.getElementById('methodNumBalls').innerText = numBalls;
-  document.getElementById('methodBallWeight').innerText = ballWeight;
+  // 7. Update numbers inside the Ingredients Card
+  document.getElementById('totalWeight').innerText = totalDoughWeight.toFixed(1);
+  document.getElementById('tipo00').innerText = tipo00.toFixed(1);
+  document.getElementById('breadFlour').innerText = breadFlour.toFixed(1);
+  document.getElementById('totalFlour').innerText = totalFlour.toFixed(1);
+  document.getElementById('mainWater').innerText = mainWater.toFixed(1);
+  document.getElementById('reservedWater').innerText = reservedWater.toFixed(1);
+  document.getElementById('totalWater').innerText = totalWater.toFixed(1);
+  document.getElementById('saltWeight').innerText = salt.toFixed(1);
+  document.getElementById('oilWeight').innerText = oil.toFixed(1);
+  document.getElementById('sugarWeight').innerText = sugar.toFixed(1);
+  document.getElementById('yeastWeight').innerText = yeast.toFixed(1);
+
+  // 8. Update numbers inside the Method Instructions text dynamically
+  document.getElementById('mMainWater').innerText = mainWater.toFixed(1);
+  document.getElementById('mReservedWater').innerText = reservedWater.toFixed(1);
+  document.getElementById('mYeast').innerText = yeast.toFixed(1);
+  document.getElementById('mTipo00').innerText = tipo00.toFixed(1);
+  document.getElementById('mBreadFlour').innerText = breadFlour.toFixed(1);
+  document.getElementById('mOil').innerText = oil.toFixed(1);
+  document.getElementById('mSalt').innerText = salt.toFixed(1);
+  document.getElementById('mSugar').innerText = sugar.toFixed(1);
+  document.getElementById('mNumBalls').innerText = numBalls;
+  document.getElementById('mBallWeight').innerText = ballWeight;
 }
 
-// Attach event listeners so the calculation runs automatically whenever any input value changes
-document.getElementById('numBalls').addEventListener('input', calculateDough);
-document.getElementById('ballWeight').addEventListener('input', calculateDough);
-document.getElementById('hydration').addEventListener('input', calculateDough);
-document.getElementById('salt').addEventListener('input', calculateDough);
-document.getElementById('yeast').addEventListener('input', calculateDough);
+// Attach event listeners to input fields
+const inputs = ['numBalls', 'ballWeight', 'hydration', 'salt', 'oil', 'sugar', 'yeast'];
+inputs.forEach(id => {
+  document.getElementById(id).addEventListener('input', calculateDough);
+});
 
-// Run the calculation once immediately when the page loads
+// Run once on initial page load
 calculateDough();

@@ -3,69 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neapolitan Pizza Calculator</title>
+  <title>Newpolitan Pizza Calculator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
+  <!-- Header -->
   <header>
     <h1>🍕 Pizza Dough Calculator</h1>
     <nav>
-      <a href="neapolitan.html">Neapolitan</a>
+      <a href="index.html">Newpolitan</a>
     </nav>
   </header>
 
   <main>
-    <h2>Neapolitan Dough Calculator</h2>
+    <h2>Newpolitan Dough Calculator</h2>
 
     <!-- Inputs Section -->
     <section>
-      <h3>Recipe Inputs</h3>
+      <h3>Recipe Defaults (%)</h3>
       <label>
         Number of Dough Balls
-        <input type="number" id="numBalls" value="4" min="1" max="50">
+        <input type="number" id="numBalls" value="6" min="1" max="50">
       </label>
       <label>
         Dough Ball Weight (g)
-        <input type="number" id="ballWeight" value="250" step="5" min="50" max="500">
+        <input type="number" id="ballWeight" value="270" step="5" min="50" max="500">
       </label>
       <label>
         Hydration (%)
-        <input type="number" id="hydration" value="65" step="0.5" min="50" max="90">
+        <input type="number" id="hydration" value="61" step="0.5" min="50" max="90">
       </label>
       <label>
         Salt (%)
-        <input type="number" id="salt" value="3" step="0.1" min="1" max="5">
+        <input type="number" id="salt" value="2.48" step="0.01" min="0.5" max="5">
       </label>
       <label>
-        Yeast (%)
-        <input type="number" id="yeast" value="0.2" step="0.01" min="0.01" max="2">
+        Olive Oil (%)
+        <input type="number" id="oil" value="1.96" step="0.01" min="0" max="5">
+      </label>
+      <label>
+        Sugar (%)
+        <input type="number" id="sugar" value="1.55" step="0.01" min="0" max="5">
+      </label>
+      <label>
+        Instant Yeast (%)
+        <input type="number" id="yeast" value="0.16" step="0.01" min="0.01" max="2">
       </label>
     </section>
 
-    <!-- Calculated Results Section -->
+    <!-- Ingredients Needed Section -->
     <section>
       <h3>Ingredients Needed</h3>
-      <p class="results-summary">Total Dough Mass: <strong id="totalWeight" style="color: var(--accent-color);">1000</strong> g</p>
+      <p class="results-summary">Total Dough: <strong id="totalWeight" style="color: var(--accent-color);">1620</strong> g</p>
       <ul>
-        <li><span>Flour</span> <strong id="flourWeight">594.5 g</strong></li>
-        <li><span>Water</span> <strong id="waterWeight">386.4 g</strong></li>
-        <li><span>Salt</span> <strong id="saltWeight">17.8 g</strong></li>
-        <li><span>Yeast</span> <strong id="yeastWeight">1.2 g</strong></li>
+        <li><span>Tipo 00 Flour (70%)</span> <strong id="tipo00">678.3 g</strong></li>
+        <li><span>Bread Flour (30%)</span> <strong id="breadFlour">290.7 g</strong></li>
+        <li><span>Total Flour</span> <strong id="totalFlour">969.0 g</strong></li>
+        <li><span>Main Water (95%)</span> <strong id="mainWater">561.5 g</strong></li>
+        <li><span>Reserved Water (5%)</span> <strong id="reservedWater">29.5 g</strong></li>
+        <li><span>Total Water</span> <strong id="totalWater">591.0 g</strong></li>
+        <li><span>Salt</span> <strong id="saltWeight">24.0 g</strong></li>
+        <li><span>Olive Oil</span> <strong id="oilWeight">19.0 g</strong></li>
+        <li><span>Sugar</span> <strong id="sugarWeight">15.0 g</strong></li>
+        <li><span>Instant Yeast</span> <strong id="yeastWeight">1.55 g</strong></li>
       </ul>
     </section>
 
     <!-- Method Instructions Section -->
     <section>
-      <h3>Method & Instructions</h3>
+      <h3>Method & Mixing Instructions</h3>
       <ol>
-        <li>Dissolve yeast and salt into cold water.</li>
-        <li>Gradually add flour while mixing until a rough dough forms.</li>
-        <li>Knead until smooth, then cover and rest at room temperature.</li>
-        <li>Ball the dough into <strong><span id="methodNumBalls">4</span> x <span id="methodBallWeight">250</span>g</strong> portions and proof before baking.</li>
+        <li>
+          <strong>Yeast Bloom & Water Prep:</strong> Pour cold main water (<strong id="mMainWater">561.5</strong>g) into your mixer bowl, setting aside your reserved water (<strong id="mReservedWater">29.5</strong>g) in a small cup. Add instant yeast (<strong id="mYeast">1.55</strong>g) and swirl around until fully dissolved.
+        </li>
+        <li>
+          <strong>Autolyse / Initial Mix:</strong> Let sit for 1 minute. Add Tipo 00 flour (<strong id="mTipo00">678.3</strong>g) and Bread flour (<strong id="mBreadFlour">290.7</strong>g). Mix on low speed for 1–2 minutes until flour is hydrated and a rough dough forms. Cover and rest for 10–15 minutes.
+        </li>
+        <li>
+          <strong>Oil Incorporation:</strong> Drizzle in olive oil (<strong id="mOil">19.0</strong>g) and mix on medium speed for 1–2 minutes until fully absorbed into the dough matrix.
+        </li>
+        <li>
+          <strong>Salt, Sugar & Final Knead:</strong> Add salt (<strong id="mSalt">24.0</strong>g), sugar (<strong id="mSugar">15.0</strong>g), and reserved water (<strong id="mReservedWater">29.5</strong>g). Mix for 2 minutes on medium speed until incorporated, then continue mixing for a further 1–2 minutes once the dough pulls back together into a smooth ball.
+        </li>
+        <li>
+          <strong>Bulk Ferment:</strong> Transfer dough to a counter or tub. Cover and leave to rise at room temperature for ~1 hour (less if hot, more if cold).
+        </li>
+        <li>
+          <strong>Balling & Cold Ferment:</strong> Divide dough into <strong><span id="mNumBalls">6</span> x <span id="mBallWeight">270</span>g</strong> portions, shape into tight round balls, and place in a proofing box. Refrigerate for approximately 72 hours.
+        </li>
       </ol>
     </section>
+
+    <!-- Baking Instructions Section -->
+    <section>
+      <h3>Baking & Oven Instructions</h3>
+      <ol>
+        <li>
+          <strong>Dough Tempering:</strong> Remove dough balls from the refrigerator 1–2 hours prior to baking (depending on ambient room temperature) to allow them to warm up and stretch easily.
+        </li>
+        <li>
+          <strong>Preheat Oven:</strong> Launch your Gozney oven and preheat for approximately 45 minutes to 1 hour until it reaches around 400°C–420°C air temperature and 380°C–390°C stone floor temperature.
+        </li>
+        <li>
+          <strong>The Initial Launch & Door Rest:</strong> Stretch, top, and launch the pizza onto the stone floor, then immediately turn off the flame. Place the door on the oven and leave for 1 minute (rotating the pizza 180° halfway through if possible).
+        </li>
+        <li>
+          <strong>Bake & Rotate:</strong> Remove the oven door and turn the flame back on to medium/medium-low. Bake pizza, rotating as necessary for an even char.
+        </li>
+        <li>
+          <strong>Post-Bake & Serve:</strong> Remove once done and place directly onto a wire cooling rack for 1 minute to keep the bottom crisp. Add post-bake toppings and serve.
+        </li>
+      </ol>
+    </section>
+
   </main>
 
   <script src="script.js"></script>
