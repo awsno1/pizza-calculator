@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neapolitan Pizza Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <h1>🍕 Pizza Dough Calculator</h1>
+    <nav>
+      <a href="neapolitan.html">Neapolitan</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Neapolitan Dough Calculator</h2>
+
+    <!-- Inputs Section -->
+    <section>
+      <h3>Recipe Inputs</h3>
+      <label>
+        Number of Dough Balls
+        <input type="number" id="numBalls" value="4" min="1" max="50">
+      </label>
+      <label>
+        Dough Ball Weight (g)
+        <input type="number" id="ballWeight" value="250" step="5" min="50" max="500">
+      </label>
+      <label>
+        Hydration (%)
+        <input type="number" id="hydration" value="65" step="0.5" min="50" max="90">
+      </label>
+      <label>
+        Salt (%)
+        <input type="number" id="salt" value="3" step="0.1" min="1" max="5">
+      </label>
+      <label>
+        Yeast (%)
+        <input type="number" id="yeast" value="0.2" step="0.01" min="0.01" max="2">
+      </label>
+    </section>
+
+    <!-- Calculated Results Section -->
+    <section>
+      <h3>Ingredients Needed</h3>
+      <p class="results-summary">Total Dough Mass: <strong id="totalWeight" style="color: var(--accent-color);">1000</strong> g</p>
+      <ul>
+        <li><span>Flour</span> <strong id="flourWeight">594.5 g</strong></li>
+        <li><span>Water</span> <strong id="waterWeight">386.4 g</strong></li>
+        <li><span>Salt</span> <strong id="saltWeight">17.8 g</strong></li>
+        <li><span>Yeast</span> <strong id="yeastWeight">1.2 g</strong></li>
+      </ul>
+    </section>
+
+    <!-- Method Instructions Section -->
+    <section>
+      <h3>Method & Instructions</h3>
+      <ol>
+        <li>Dissolve yeast and salt into cold water.</li>
+        <li>Gradually add flour while mixing until a rough dough forms.</li>
+        <li>Knead until smooth, then cover and rest at room temperature.</li>
+        <li>Ball the dough into <strong><span id="methodNumBalls">4</span> x <span id="methodBallWeight">250</span>g</strong> portions and proof before baking.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
