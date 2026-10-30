@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Topping Ideas - Pizza Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling adjustments specifically for pre/post bake lists */
+    .topping-card {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .topping-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .topping-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-red);
+      margin-bottom: 6px;
+    }
+    .topping-group {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .topping-group strong {
+      color: var(--text-main);
+    }
+    .topping-group span {
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <h1>🍕 Pizza Lab</h1>
+    <nav>
+      <a href="index.html">Dough Calculator</a> | 
+      <a href="toppings.html">Topping Ideas</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Topping Combinations</h2>
+
+    <!-- Red Base Section -->
+    <section>
+      <h3>🔴 Red Base Combinations</h3>
+
+      <div class="topping-card">
+        <div class="topping-title">Classic Margherita</div>
+        <div class="topping-group">
+          <strong>Pre-Bake:</strong> <span>San Marzano tomato sauce, fresh fior di latte mozzarella</span>
+        </div>
+        <div class="topping-group">
+          <strong>Post-Bake:</strong> <span>Fresh basil leaves, extra virgin olive oil, grated Parmigiano-Reggiano</span>
+        </div>
+      </div>
+
+      <div class="topping-card">
+        <div class="topping-title">Spicy Pepperoni & Hot Honey</div>
+        <div class="topping-group">
+          <strong>Pre-Bake:</strong> <span>San Marzano tomato sauce, fior di latte mozzarella, cupping pepperoni</span>
+        </div>
+        <div class="topping-group">
+          <strong>Post-Bake:</strong> <span>Hot honey drizzle, fresh basil, cracked black pepper</span>
+        </div>
+      </div>
+
+      <div class="topping-card">
+        <div class="topping-title">Prosciutto & Hot Capocollo</div>
+        <div class="topping-group">
+          <strong>Pre-Bake:</strong> <span>Tomato sauce, smoked provola or
