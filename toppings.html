@@ -3,29 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizza Topping Ideas - Pizza Lab</title>
+  <title>Topping Ideas & Prep Planner - Pizza Lab</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Styling adjustments specifically for pre/post bake lists */
     .topping-card {
-      margin-bottom: 20px;
-      padding-bottom: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
       border-bottom: 1px dashed var(--border-color);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
     }
     .topping-card:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
+    .topping-select {
+      margin-top: 4px;
+      transform: scale(1.25);
+      accent-color: var(--accent-red);
+      cursor: pointer;
+    }
+    .topping-info {
+      flex: 1;
+    }
     .topping-title {
       font-size: 1.05rem;
       font-weight: 700;
       color: var(--accent-red);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .topping-group {
       font-size: 0.9rem;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       line-height: 1.4;
     }
     .topping-group strong {
@@ -33,6 +44,72 @@
     }
     .topping-group span {
       color: var(--text-muted);
+    }
+    
+    /* Prep & Shopping Boxes */
+    .prep-box {
+      background-color: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+    .prep-box h4 {
+      color: var(--accent-red);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .prep-box ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .prep-box ul li {
+      display: list-item;
+      border-bottom: none;
+      padding: 3px 0;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    /* Quick Add Custom Item Box */
+    .quick-add-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .quick-add-group input[type="text"] {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      background: var(--bg-color);
+    }
+    .quick-add-group button {
+      background-color: var(--accent-green);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Sub Recipes styling */
+    .recipe-card {
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f5ede8;
+    }
+    .recipe-card:last-child {
+      border-bottom: none;
+    }
+    .recipe-title {
+      font-weight: 700;
+      color: var(--accent-green);
+      margin-bottom: 4px;
     }
   </style>
 </head>
@@ -48,33 +125,35 @@
   </header>
 
   <main>
-    <h2>Topping Combinations</h2>
+    <h2>Topping Combinations & Session Builder</h2>
 
     <!-- Red Base Section -->
     <section>
-      <h3>🔴 Red Base Combinations</h3>
+      <h3>🔴 Red Base Pizzas</h3>
 
       <div class="topping-card">
-        <div class="topping-title">Classic Margherita</div>
-        <div class="topping-group">
-          <strong>Pre-Bake:</strong> <span>San Marzano tomato sauce, fresh fior di latte mozzarella</span>
-        </div>
-        <div class="topping-group">
-          <strong>Post-Bake:</strong> <span>Fresh basil leaves, extra virgin olive oil, grated Parmigiano-Reggiano</span>
+        <input type="checkbox" class="topping-select" onchange="generatePrepList()"
+               data-raw="Mutti canned tomatoes, Mozzarella, Parmesan, 'Nduja, Red onion, Stracciatella, Hot honey"
+               data-pre="Tomato sauce, Mozzarella, Parmesan, 'Nduja, Red onion"
+               data-post="Stracciatella (optional), Hot honey">
+        <div class="topping-info">
+          <div class="topping-title">'Nduja, Red Onion, Hot Honey & Stracciatella</div>
+          <div class="topping-group"><strong>Pre-Bake:</strong> <span>Tomato sauce, mozzarella, parmesan, 'nduja, red onion</span></div>
+          <div class="topping-group"><strong>Post-Bake:</strong> <span>Stracciatella (optional), hot honey</span></div>
         </div>
       </div>
 
       <div class="topping-card">
-        <div class="topping-title">Spicy Pepperoni & Hot Honey</div>
-        <div class="topping-group">
-          <strong>Pre-Bake:</strong> <span>San Marzano tomato sauce, fior di latte mozzarella, cupping pepperoni</span>
-        </div>
-        <div class="topping-group">
-          <strong>Post-Bake:</strong> <span>Hot honey drizzle, fresh basil, cracked black pepper</span>
+        <input type="checkbox" class="topping-select" onchange="generatePrepList()"
+               data-raw="Mutti canned tomatoes, Parmesan, Mozzarella, Salami, Pickled chillies, Hot honey"
+               data-pre="Tomato sauce, Parmesan, Mozzarella, Salami, Pickled chillies (optional)"
+               data-post="Hot honey, Parmesan (optional)">
+        <div class="topping-info">
+          <div class="topping-title">Salami & Hot Honey</div>
+          <div class="topping-group"><strong>Pre-Bake:</strong> <span>Tomato sauce, parmesan, mozzarella, salami, pickled chillies (optional)</span></div>
+          <div class="topping-group"><strong>Post-Bake:</strong> <span>Hot honey, parmesan (optional)</span></div>
         </div>
       </div>
 
       <div class="topping-card">
-        <div class="topping-title">Prosciutto & Hot Capocollo</div>
-        <div class="topping-group">
-          <strong>Pre-Bake:</strong> <span>Tomato sauce, smoked provola or
+        <input type="checkbox" class="topping-select" on
