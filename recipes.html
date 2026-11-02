@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-Recipes - Pizza Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .recipe-card {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .recipe-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .recipe-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-red);
+      margin-bottom: 8px;
+    }
+    .recipe-ingredients {
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      background: var(--bg-color);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .recipe-ingredients strong {
+      color: var(--text-main);
+    }
+    ol {
+      padding-left: 20px;
+    }
+    ol li {
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <h1>🍕 Pizza Lab</h1>
+    <nav>
+      <a href="index.html">Dough Calculator</a> | 
+      <a href="toppings.html">Topping Ideas</a> |
+      <a href="recipes.html">Sub-Recipes</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Ingredient Sub-Recipes</h2>
+
+    <section>
+      <h3>🔴 Red Base Sauces</h3>
+
+      <!-- Tomato Sauce -->
+      <div class="recipe-card">
+        <div class="recipe-title">Classic Neapolitan Tomato Sauce</div>
+        <div class="recipe-ingredients">
+          <strong>Ingredients:</strong> Mutti canned whole peeled tomatoes, extra virgin olive oil (EVOO), fine sea salt (1g salt per 100g tomatoes).
+        </div>
+        <ol>
+          <li>Partially drain the Mutti canned tomatoes to remove excess watery juice.</li>
+          <li>Add a small glug of high-quality EVOO.</li>
+          <li>Mix in 1g of salt per 100g of drained tomatoes until well combined. Hand-crush or pulse briefly.</li>
+        </ol>
+      </div>
+
+      <!-- Vodka Sauce -->
+      <div class="recipe-card">
+        <div class="recipe-title">Vodka Sauce</div>
+        <div class="recipe-ingredients">
+          <strong>Ingredients:</strong> Tomato paste/sauce, heavy cream, garlic, vodka, butter, parmesan.
+        </div>
+        <ol>
+          <li>Sauté garlic in olive oil and butter over low heat until fragrant.</li>
+          <li>Stir in tomato paste and cook down until darkened. Deglaze with a splash of vodka.</li>
+          <li>Simmer until alcohol reduces, stir in heavy cream and parmesan, then blend until silky smooth.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h3>🟡 Cooked Toppings & Caramelisation</h3>
+
+      <!-- Caramelised Onions -->
+      <div class="recipe-card">
+        <div class="recipe-title">Caramelised Onions</div>
+        <div class="recipe-ingredients">
+          <strong>Ingredients:</strong> Brown onions, cooking oil, sea salt, water.
+        </div>
+        <ol>
+          <li>Finely slice the brown onions against the grain.</li>
+          <li>Add onions to a wide pan on low heat with a splash of oil and a pinch of salt.</li>
+          <li>Cook slowly on very low heat for 30 minutes, stirring occasionally, until deep golden brown.</li>
+          <li>Add a small splash of water if the pan dries out before the onions fully soften.</li>
+        </ol>
+      </div>
+
+      <!-- Caramelised Pineapple -->
+      <div class="recipe-card">
+        <div class="recipe-title">Gourmet Caramelised Pineapple</div>
+        <div class="recipe-ingredients">
+          <strong>Ingredients:</strong> Fresh pineapple, extra virgin olive oil (EVOO), brown sugar.
+        </div>
+        <ol>
+          <li>Slice fresh pineapple into thin strips (approx. 5mm wide) against the grain.</li>
+          <li>Preheat a skillet over medium heat with a light coating of EVOO.</li>
+          <li>Pan-fry pineapple slices until lightly browned, then flip.</li>
+          <li>Sprinkle brown sugar over the top to coat evenly once melted.</li>
+          <li>Cook until sugar caramelises into a rich glaze, remove from heat, and cool before topping.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h3>⚪ Creams & Finishers</h3>
+
+      <!-- Lemon Stracciatella -->
+      <div class="recipe-card">
+        <div class="recipe-title">Lemon Stracciatella</div>
+        <div class="recipe-ingredients">
+          <strong>Ingredients:</strong> Fresh stracciatella (or shredded burrata), fresh lemon zest, flaky sea salt, EVOO.
+        </div>
+        <ol>
+          <li>Place fresh stracciatella in a small bowl.</li>
+          <li>Gently fold in fresh lemon zest and a tiny drizzle of EVOO.</li>
+          <li>Finish with flaky sea salt and dollop post-bake over hot pizza.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
