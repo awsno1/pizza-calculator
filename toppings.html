@@ -102,13 +102,13 @@
     <h1>🍕 Pizza Lab 🍕</h1>
     <nav>
       <a href="index.html">Dough Calculator</a> | 
-      <a href="toppings.html">Topping</a> |
-      <a href="recipes.html">Sub-Recipes</a>
+      <a href="toppings.html">Toppings</a> |
+      <a href="recipes.html">Topping Recipes</a>
     </nav>
   </header>
 
   <main>
-    <h2>Topping Combinations & Session Builder</h2>
+    <h2>Toppings</h2>
 
     <!-- Red Base Section -->
     <section>
@@ -241,19 +241,21 @@
 
       <div class="topping-card">
         <input type="checkbox" class="topping-select" onchange="generatePrepList()"
-               data-raw="Mozzarella, Potatoes, Fresh rosemary, Truffle oil, Truffle honey"
+               data-raw="Mozzarella, Desiree Potatoes, Fresh rosemary, Truffle oil, Truffle honey"
                data-pre="Mozzarella/cheese blend, Sliced potato, Rosemary"
                data-post="Truffle oil or truffle honey">
         <div class="topping-info">
-          <div class="topping-title">Potato Pizza</div>
+          <div class="topping-title">Potato</div>
           <div class="topping-group"><strong>Pre-Bake:</strong> <span>Mozzarella/cheese blend, sliced potato, rosemary</span></div>
-          <div class="topping-group"><strong>Post-Bake:</strong> <span>Truffle oil or truffle honey</span></div>
+          <div class="topping-group"><strong>Post-Bake:</strong> <span>Truffle oil or truffle honey (optional)</span></div>
+          <div class="topping-group"><strong>Instructions:</strong> <span>Peel potatoes and finely slice with a mandolin (approx 1mm). Submerge in water and place in the fridge for at least 20 minutes, but can be longer. Shortly before baking, remove from the water, dry with paper towel and mix with olive oil and salt before topping.</span></div>
+          <div class="topping-group"><strong>Note:</strong> <span>Top with parmesan and mozzarella first before topping with finely sliced rosemary. Cover the entirety of the pizza in sliced potatoes before baking.</span></div>
         </div>
       </div>
 
       <div class="topping-card">
         <input type="checkbox" class="topping-select" onchange="generatePrepList()"
-               data-raw="Mozzarella, Pork sausage, Brown onions, Dried chilli, Parmesan"
+               data-raw="Mozzarella, Italian Pork sausage, Brown onions, Dried chilli, Parmesan"
                data-pre="Mozzarella, Pork sausage, Caramelised onion, Dried chilli, Parmesan"
                data-post="None">
         <div class="topping-info">
@@ -266,7 +268,7 @@
 
     <!-- Generated Session List -->
     <section id="session-summary">
-      <h3>📋 Session Shopping & Prep List</h3>
+      <h3>📋 Shopping & Prep List</h3>
       <p style="font-size: 0.88rem; color: var(--text-muted);">Select pizzas above to generate your store list and bench prep.</p>
       
       <div class="prep-box">
